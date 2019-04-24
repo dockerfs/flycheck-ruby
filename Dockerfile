@@ -5,4 +5,5 @@ MAINTAINER Liluo <liluorz@gmail.com>
 RUN mkdir -p /app
 WORKDIR /app
 ARG tag
-RUN gem install rubocop -v ${tag} --no-rdoc --no-ri
+# https://qiita.com/noanoa07/items/dd88845aa5d43e5d1e4a
+RUN gem install rubocop -v ${tag} -​-no-document
