@@ -1,5 +1,8 @@
 #!/bin/bash
 # https://stackoverflow.com/questions/55347752/dockerhub-autobuild-for-a-github-pull-request-using-the-docker-tag-variable
 # https://docs.docker.com/docker-hub/builds/advanced/#custom-build-phase-hooks
-echo build --build-arg tag="$SOURCE_BRANCH" DOCKER_TAG="${DOCKER_TAG}" -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME" .
-docker build --build-arg tag="$SOURCE_BRANCH" DOCKER_TAG="${DOCKER_TAG}" -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME" .
+echo build --build-arg tag="$SOURCE_BRANCH" --build-arg DOCKER_TAG="${DOCKER_TAG}" -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME" .
+# https://docs.docker.com/engine/reference/commandline/build/
+#  https://github.com/docker/hub-feedback/issues/508
+docker build --build-arg tag="$SOURCE_BRANCH" --build-arg DOCKER_TAG="${DOCKER_TAG}" -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME" .
+
