@@ -1,0 +1,4 @@
+#!/bin/bash
+# https://stackoverflow.com/questions/55347752/dockerhub-autobuild-for-a-github-pull-request-using-the-docker-tag-variable
+# https://docs.docker.com/docker-hub/builds/advanced/#custom-build-phase-hooks
+docker build --build-arg tag="$SOURCE_BRANCH" DOCKER_TAG="${DOCKER_TAG}" -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME" .
