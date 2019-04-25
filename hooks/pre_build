@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# from https://github.com/thibaultdelor/testAutobuildHooks/blob/master/hooks/pre_build
+echo "------ HOOK START - PRE_BUILD -------"
+printenv
+
+echo "------ HOOK END - PRE_BUILD -------"
